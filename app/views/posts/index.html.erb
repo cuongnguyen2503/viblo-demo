@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<div class="grid">
+  <% @posts.each do |post| %>
+    <div class="grid-item">
+      <h3><%= link_to post.title, post_path(post) %></h3>
+      <p><%= post.content %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= will_paginate @posts %>
